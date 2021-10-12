@@ -5,7 +5,7 @@
   "main": "index.js",
   "directories": {
     "lib": "lib",
-    "test": "__test__"
+    "test": "_test_"
   },
   "scripts": {
     "start": "node index.js",
