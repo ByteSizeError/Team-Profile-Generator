@@ -145,7 +145,7 @@ function createHTML() {
         switch(member.getRole()) {
             case "Manager":
                 memberSpecial = 
-                `<th>Office Number:</th>
+                `<th>Office:</th>
                 <td>${member.getOffice()}</td>`;
                 break;
             case "Engineer":
@@ -178,7 +178,7 @@ function createHTML() {
             </table>`;
 
         let contentMember =
-            `<div>
+            `<div class="member">
                 <h2>${member.getName()}</h2>
                 <h2>${member.getRole()}</h2>
                 ${memberInfo}
@@ -195,6 +195,11 @@ function createHTML() {
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">        
             <title>Team Roster</title>
         </head>
 
@@ -202,7 +207,7 @@ function createHTML() {
             <header>
                 <h1>Team Roster</h1>
             </header>
-            <main>
+            <main id="team">
                 ${contentTeam}
             </main>
         </body>

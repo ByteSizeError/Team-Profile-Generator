@@ -1,0 +1,57 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+header {
+    text-align: center;
+    background-color: steelblue;
+    color: white;
+    height: 60px;
+    padding: 15px;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+h2 {
+    font-size: x-large;
+    margin: 10px;
+}
+
+.member {
+    /* width: 200px; */
+    min-width: 250px;
+    height: 200px;
+    text-align: center;
+    background-color: steelblue;
+    color: white;
+    margin: 25px;
+    box-shadow: 0 5px 10px 0 dimgray, 0 5px 20px 0 dimgray;
+    border-radius: 5px;
+}
+
+#team {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+table {
+    background-color: white;
+    font-size: medium;
+    color: black;
+    width: 100%;
+    height: 122px;
+    margin-top: 10px;
+    text-align: left;
+    padding: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+td {
+    text-align: right;
+}
