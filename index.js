@@ -112,6 +112,7 @@ function addMember() {
         });
 }
 
+// adds an engineer
 function addEngineer() {
     // asks for the engineers info
     inquirer
@@ -123,6 +124,7 @@ function addEngineer() {
         });
 }
 
+// adds an intern
 function addIntern() {
     // asks for the interns info
     inquirer
@@ -134,7 +136,8 @@ function addIntern() {
         });
 }
 
-function memeberRoleIcon(role) {
+// gets the icon for employees specific role
+function memberRoleIcon(role) {
     switch (role) {
         case "Manager":
             return '<i class="fas fa-mug-hot"></i>';
@@ -147,14 +150,17 @@ function memeberRoleIcon(role) {
     }
 }
 
+// function helps to creat HTML file
 function createHTML() {
     let contentTeam = "";
 
+    // loops through all team members added
     for (let i = 0; i < team.length; i++) {
         const member = team[i];
 
         let memberSpecial = ""
 
+        // switch statement to determine whats their role
         switch (member.getRole()) {
             case "Manager":
                 memberSpecial =
@@ -175,6 +181,7 @@ function createHTML() {
                 return;
         }
 
+        // member info under their name and role
         let memberInfo =
             `<table>
                 <tr>
@@ -190,18 +197,18 @@ function createHTML() {
                 <tr>
             </table>`;
 
-
-
+        // HTML content for employees
         let contentMember =
             `<div class="member">
                 <h2>${member.getName()}</h2>
-                <h2>${memeberRoleIcon(member.getRole())} ${member.getRole()}</h2>
+                <h2>${memberRoleIcon(member.getRole())} ${member.getRole()}</h2>
                 ${memberInfo}
             </div>`;
 
         contentTeam += contentMember;
     }
 
+    // the rest of the HTML file that contains the head and body
     const contentHTML =
         `<!DOCTYPE html>
         <html lang="en">
@@ -229,6 +236,7 @@ function createHTML() {
         </body>
         </html>`;
 
+    // create teamroster.html file inside the dist folder
     fs.writeFile('dist/teamroster.html', contentHTML, function (err) {
         if (err) throw err;
         console.log("Team Roster Created!");
@@ -236,6 +244,7 @@ function createHTML() {
     })
 }
 
+// starts the application
 function init() {
     // start by asking for the managers info
     inquirer
