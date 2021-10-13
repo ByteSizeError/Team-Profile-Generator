@@ -151,7 +151,7 @@ function createHTML() {
             case "Engineer":
                 memberSpecial = 
                 `<th>GitHub:</th>
-                <td>${member.getGithub()}</td>`;
+                <td><a href="https://github.com/${member.getGithub()}">${member.getGithub()}<a></td>`;
                 break;
             case "Intern":
                 memberSpecial = 
@@ -170,7 +170,7 @@ function createHTML() {
                 <tr>
                 <tr>
                     <th>Email:</th>
-                    <td>${member.getEmail()}</td>
+                    <td><a href="mailto:${member.getEmail()}">${member.getEmail()}</a></td>
                 <tr>
                 <tr>
                     ${memberSpecial}
@@ -216,6 +216,7 @@ function createHTML() {
     fs.writeFile('dist/teamroster.html', contentHTML, function (err) {
         if (err) throw err;
         console.log("Team Roster Created!");
+        console.log("Located at Team-Profile-Generator > dist > teamroster.html");
     })
 }
 
