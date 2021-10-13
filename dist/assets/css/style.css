@@ -22,13 +22,13 @@ h2 {
 .member {
     /* width: 200px; */
     min-width: 250px;
-    height: 200px;
+    height: 210px;
     text-align: center;
     background-color: steelblue;
     color: white;
     margin: 25px;
     box-shadow: 0 5px 10px 0 dimgray, 0 5px 20px 0 dimgray;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 #team {

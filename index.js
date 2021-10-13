@@ -134,6 +134,19 @@ function addIntern() {
         });
 }
 
+function memeberRoleIcon(role) {
+    switch (role) {
+        case "Manager":
+            return '<i class="fas fa-mug-hot"></i>';
+        case "Engineer":
+            return '<i class="fas fa-laptop-code"></i>';
+        case "Intern":
+            return '<i class="fas fa-graduation-cap"></i>';
+        default:
+            return;
+    }
+}
+
 function createHTML() {
     let contentTeam = "";
 
@@ -141,22 +154,22 @@ function createHTML() {
         const member = team[i];
 
         let memberSpecial = ""
-            
-        switch(member.getRole()) {
+
+        switch (member.getRole()) {
             case "Manager":
-                memberSpecial = 
-                `<th>Office:</th>
-                <td>${member.getOffice()}</td>`;
+                memberSpecial =
+                    `<th>Office:</th>
+                    <td>${member.getOffice()}</td>`;
                 break;
             case "Engineer":
-                memberSpecial = 
-                `<th>GitHub:</th>
-                <td><a href="https://github.com/${member.getGithub()}">${member.getGithub()}<a></td>`;
+                memberSpecial =
+                    `<th>GitHub:</th>
+                    <td><a href="https://github.com/${member.getGithub()}" target="_blank">${member.getGithub()}<a></td>`;
                 break;
             case "Intern":
-                memberSpecial = 
-                `<th>School:</th>
-                <td>${member.getSchool()}</td>`;
+                memberSpecial =
+                    `<th>School:</th>
+                    <td>${member.getSchool()}</td>`;
                 break;
             default:
                 return;
@@ -170,20 +183,22 @@ function createHTML() {
                 <tr>
                 <tr>
                     <th>Email:</th>
-                    <td><a href="mailto:${member.getEmail()}">${member.getEmail()}</a></td>
+                    <td><a href="mailto:${member.getEmail()}" target="_blank">${member.getEmail()}</a></td>
                 <tr>
                 <tr>
                     ${memberSpecial}
                 <tr>
             </table>`;
 
+
+
         let contentMember =
             `<div class="member">
                 <h2>${member.getName()}</h2>
-                <h2>${member.getRole()}</h2>
+                <h2>${memeberRoleIcon(member.getRole())} ${member.getRole()}</h2>
                 ${memberInfo}
             </div>`;
-        
+
         contentTeam += contentMember;
     }
 
@@ -195,11 +210,12 @@ function createHTML() {
             <meta charset="UTF-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
-            <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">        
+            <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>            
+            <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">     
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">   
             <title>Team Roster</title>
         </head>
 
