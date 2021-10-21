@@ -2,7 +2,7 @@
 
 ## Description
 
-This project is a team profile generator, it takes in user inputs with inquirer and creates a HTML page with all their teams information. My motivation for this project was to create something that can help people who work in large teams keep track of their team information. The problem this solves is it can help team members easily find information on their teammates at a glance
+This project is a team profile generator, it takes in user inputs with inquirer and creates an HTML page with all their team's information. My motivation for this project was to create something that can help people who work in large teams keep track of their team information. The problem this solves is it can help team members easily find information on their teammates at a glance.
 
 ## Link to the Project
 
